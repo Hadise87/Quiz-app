@@ -1,0 +1,53 @@
+/** @format */
+export const questions = [
+  {
+    questionText: `What's the capital of France?`,
+    answerOptions: [
+      { answerText: "Tokyo", isCorrect: false },
+      { answerText: "London", isCorrect: false },
+      { answerText: "Berlin", isCorrect: false },
+      { answerText: "Paris", isCorrect: false },
+      { answerText: "Rome", isCorrect: false },
+    ],
+  },
+  {
+    questionText: `What's the capital of Japan?`,
+    answerOptions: [
+      { answerText: "Tokyo", isCorrect: false },
+      { answerText: "London", isCorrect: false },
+      { answerText: "Berlin", isCorrect: false },
+      { answerText: "Paris", isCorrect: false },
+      { answerText: "Rome", isCorrect: false },
+    ],
+  },
+  {
+    questionText: `What's the capital of UK?`,
+    answerOptions: [
+      { answerText: "Tokyo", isCorrect: false },
+      { answerText: "London", isCorrect: false },
+      { answerText: "Berlin", isCorrect: false },
+      { answerText: "Paris", isCorrect: false },
+      { answerText: "Rome", isCorrect: false },
+    ],
+  },
+  {
+    questionText: `What's the capital of France?`,
+    answerOptions: [
+      { answerText: "Tokyo", isCorrect: false },
+      { answerText: "London", isCorrect: false },
+      { answerText: "Berlin", isCorrect: false },
+      { answerText: "Paris", isCorrect: false },
+      { answerText: "Rome", isCorrect: false },
+    ],
+  },
+  {
+    questionText: `What's the capital of Italy?`,
+    answerOptions: [
+      { answerText: "Tokyo", isCorrect: false },
+      { answerText: "London", isCorrect: false },
+      { answerText: "Berlin", isCorrect: false },
+      { answerText: "Paris", isCorrect: false },
+      { answerText: "Rome", isCorrect: false },
+    ],
+  },
+];
