@@ -3,36 +3,41 @@
 import React, { useState } from "react";
 import { Header } from "../Header/Header";
 import { questions } from "../../data/questions";
+import { Answer } from "../Answer/Answer";
 
 export const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState();
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
   const question = questions[currentQuestion];
   console.log(question);
 
+  const handleAnswerClick = (index: Number, correct: Boolean) => {
+    setSelectedAnswer(index);
+    // way of writing the setiscorrect property
+    setIsCorrect(question.answerOptions[index].isCorrect);
+  };
+
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className=" bg-white border border-gray-200 p-8 rounded-sm shadow-lg w-full max-w-md flex flex-col justify-center gap-3">
+      <div className="max-w-md w-full p-8 flex flex-col justify-center bg-white border border-blue-900 shadow-lg">
         <Header />
-        <div className=" text-gray-800 p-2">{question.questionText} </div>
-        <div className="border p-2 flex justify-center items-center">
-          ANSWER1
+        <div className="text-black m-2 p-2">{question.questionText}</div>
+        {/* The order of option and index is a matter? */}
+        <div className="flex flex-col gap-2">
+          {question.answerOptions.map((option, index) => (
+            // How to define and understand what to have as property here?
+            <Answer
+              key={index}
+              answerText={option.answerText}
+              handleAnswerClick={handleAnswerClick}
+              index={index}
+              selectedAnswer={selectedAnswer}
+              isCorrect={option.isCorrect}
+            />
+          ))}
         </div>
-        <div className="border p-2 flex justify-center items-center">
-          ANSWER2
-        </div>
-        <div className="border p-2 flex justify-center items-center">
-          ANSWER3
-        </div>
-        <div className="border p-2 flex justify-center items-center">
-          ANSWER4
-        </div>
-        <div className="border p-2 flex justify-center items-center">
-          ANSWER5
-        </div>
-        <div> question counter</div>
       </div>
     </div>
   );

@@ -6,14 +6,14 @@ export const questions = [
       { answerText: "Tokyo", isCorrect: false },
       { answerText: "London", isCorrect: false },
       { answerText: "Berlin", isCorrect: false },
-      { answerText: "Paris", isCorrect: false },
+      { answerText: "Paris", isCorrect: true },
       { answerText: "Rome", isCorrect: false },
     ],
   },
   {
     questionText: `What's the capital of Japan?`,
     answerOptions: [
-      { answerText: "Tokyo", isCorrect: false },
+      { answerText: "Tokyo", isCorrect: true },
       { answerText: "London", isCorrect: false },
       { answerText: "Berlin", isCorrect: false },
       { answerText: "Paris", isCorrect: false },
