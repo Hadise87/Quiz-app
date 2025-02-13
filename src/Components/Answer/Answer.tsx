@@ -1,8 +1,15 @@
 /** @format */
 
 import React from "react";
+type answerProps = {
+  answerText: string;
+  index: number;
+  handleAnswerClick: (index: number) => void;
+  selectedAnswer: number | null;
+  isCorrect: boolean;
+};
 
-export const Answer = ({
+export const Answer: React.FC<answerProps> = ({
   answerText,
   index,
   handleAnswerClick,
@@ -18,7 +25,7 @@ export const Answer = ({
       onClick={() => handleAnswerClick(index)}
       disabled={selectedAnswer != null}
       className={`border p-2 flex bg-gray-100 flex-col justify-center items-center rounded-sm ${
-        selectedAnswer !== null
+        selectedAnswer !== null 
           ? isSelected
             ? isCorrect
               ? "bg-green-400"
