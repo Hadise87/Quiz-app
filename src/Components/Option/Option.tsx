@@ -1,20 +1,19 @@
 /** @format */
 
 import React from "react"
-type answerProps = {
-  answerText: string
+type OptionProps = {
+  option: string
   index: number
   handleAnswerClick: (index: number) => void
   selectedAnswer: number | null
   isCorrect: boolean
 }
 
-export const Answer: React.FC<answerProps> = ({
-  answerText,
+export const Option: React.FC<OptionProps> = ({
+  option,
   index,
   handleAnswerClick,
   selectedAnswer,
-  // isSelected, ??
   isCorrect,
 }) => {
   const isSelected = selectedAnswer === index
@@ -30,15 +29,13 @@ export const Answer: React.FC<answerProps> = ({
         : "bg-gray-200"
       : "bg-gray-200 hover:bg-gray-300"
 
-  console.log(selectedAnswer, isSelected, shouldShowGreen)
-
   return (
     <button
       onClick={() => handleAnswerClick(index)}
       disabled={selectedAnswer != null}
       className={`border p-2 flex bg-gray-100 flex-col justify-center items-center rounded-sm ${colorOption}`}
     >
-      {answerText}
+      {option}
     </button>
   )
 }
