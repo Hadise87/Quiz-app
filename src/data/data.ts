@@ -1,5 +1,14 @@
-/** @format */
-export const questionDataBase = [
+type Question = {
+  readonly question: string;
+  readonly options: ReadonlyArray<{
+    readonly option: string;
+    readonly isCorrect: boolean;
+  }>;
+};
+
+type QuestionsDataBase = ReadonlyArray<Question>;
+
+export const questionsDataBase:QuestionsDataBase = [
   {
     question: `What's the capital of France?`,
     options: [
