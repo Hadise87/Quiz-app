@@ -1,62 +1,35 @@
 type Question = {
-  readonly question: string;
-  readonly options: ReadonlyArray<{
-    readonly option: string;
-    readonly isCorrect: boolean;
-  }>;
-};
+  readonly question: string
+  readonly options: ReadonlyArray<string>
+  readonly correct: string
+}
 
-type QuestionsDataBase = ReadonlyArray<Question>;
+type QuestionsDataBase = ReadonlyArray<Question>
 
-export const questionsDataBase:QuestionsDataBase = [
+export const questionsDataBase: QuestionsDataBase = [
   {
     question: `What's the capital of France?`,
-    options: [
-      { option: "Tokyo", isCorrect: false },
-      { option: "London", isCorrect: false },
-      { option: "Berlin", isCorrect: false },
-      { option: "Paris", isCorrect: true },
-      { option: "Rome", isCorrect: false },
-    ],
+    options: ["Tokyo", "London", "Berlin", "Paris", "Rome"],
+    correct: "Paris",
   },
   {
     question: `What's the capital of Japan?`,
-    options: [
-      { option: "London", isCorrect: false },
-      { option: "Paris", isCorrect: false },
-      { option: "Rome", isCorrect: false },
-      { option: "Berlin", isCorrect: false },
-      { option: "Tokyo", isCorrect: true },
-    ],
+    options: ["London", "Paris", "Rome", "Berlin", "Tokyo"],
+    correct: "Tokyo",
   },
   {
     question: `What's the capital of UK?`,
-    options: [
-      { option: "Rome", isCorrect: false },
-      { option: "Tokyo", isCorrect: false },
-      { option: "London", isCorrect: true },
-      { option: "Paris", isCorrect: false },
-      { option: "Berlin", isCorrect: false },
-    ],
+    options: ["Rome", "Tokyo", "London", "Paris", "Berlin"],
+    correct: "London",
   },
   {
     question: `What's the capital of Germany?`,
-    options: [
-      { option: "London", isCorrect: false },
-      { option: "Paris", isCorrect: false },
-      { option: "Berlin", isCorrect: true },
-      { option: "Rome", isCorrect: false },
-      { option: "Tokyo", isCorrect: false },
-    ],
+    options: ["London", "Paris", "Berlin", "Rome", "Tokyo"],
+    correct: "Berlin",
   },
   {
     question: `What's the capital of Italy?`,
-    options: [
-      { option: "Paris", isCorrect: false },
-      { option: "Tokyo", isCorrect: false },
-      { option: "Rome", isCorrect: true },
-      { option: "Berlin", isCorrect: false },
-      { option: "London", isCorrect: false },
-    ],
+    options: ["Paris", "Tokyo", "Rome", "Berlin", "London"],
+    correct: "Rome",
   },
-];
+] as const
